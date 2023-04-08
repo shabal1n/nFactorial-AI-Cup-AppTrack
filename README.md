@@ -1,9 +1,9 @@
 # nFactorial-AI-Cup-AppTrack
 
-## < Your Name >
+## Artur Shabalin
 
 
-## < Your App's Name >
+## MyFinance
 
 
 ## Typeform to submit:
