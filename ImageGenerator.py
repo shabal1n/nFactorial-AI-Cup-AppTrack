@@ -2,8 +2,6 @@ import openai
 
 openai.api_key = "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"
 
-text_list = ['Burnout and exhaustion at work\n', 'Feelings of fear and anxiety about change (moving to a new city)\n', 'Worries about losing connections with old friends\n', 'Fear of loneliness and difficulty making new friends\n', 'Uncertainty about the future and returning home']
-
 def get_image_generation(text_list):
   urls = []
   counter = 0
@@ -16,7 +14,5 @@ def get_image_generation(text_list):
       )
       urls.append(response.__dict__['_previous']['data'][0]['url'])
       counter += 1
-  print(urls)
+  # print(urls)
   return urls
-
-get_image_generation(text_list)
