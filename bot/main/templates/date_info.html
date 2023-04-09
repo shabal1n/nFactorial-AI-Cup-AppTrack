@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+</head>
+
+<body>
+    <div class="top_half">
+        <div class="left_half">
+            <div class="month">
+                <ul>
+                    <li class="prev">&#10094;</li>
+                    <li class="next">&#10095;</li>
+                    <li>{{ this_month }}<br><span style="font-size:18px">{{ this_year }}</span></li>
+                </ul>
+            </div>
+
+            <ul class="weekdays">
+                <li>Mo</li>
+                <li>Tu</li>
+                <li>We</li>
+                <li>Th</li>
+                <li>Fr</li>
+                <li>Sa</li>
+                <li>Su</li>
+            </ul>
+
+            <ul class="days">
+                {% for i in days_list %}
+                    {% if i == day %}
+                        <li onclick=location.href="{% url 'info' %}?month={{ this_month|default:'' }}&day={{ i|default:'' }}"><span class="active">{{ i }}</span></li>
+                    {% else %}
+                        <li onclick=location.href="{% url 'info' %}?month={{ this_month|default:'' }}&day={{ i|default:'' }}">{{ i }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="right_half">
+            <div class="note">
+                <h3>Your note for {{ this_month }} {{ day }}</h3>
+                <p>{{ note }}</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 style="text-align: center;">Images generated that day</h3>
+    <div class="bottom_half">
+        <img src="https://www.researchgate.net/profile/Cataldo-Guaragnella/publication/235406965/figure/fig1/AS:393405046771720@1470806480985/Original-image-256x256-pixels_Q320.jpg" alt="robot" />
+    </div>
+
+
+
+</body>
+
+</html>
