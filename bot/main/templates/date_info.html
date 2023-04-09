@@ -41,6 +41,7 @@
 
         <div class="right_half">
             <div class="note">
+                <button onclick=location.href="{% url 'new_note' %}">New note</button>
                 <h3>Your note for {{ this_month }} {{ day }}</h3>
                 <p>{{ note }}</p>
             </div>
@@ -49,7 +50,11 @@
 
     <h3 style="text-align: center;">Images generated that day</h3>
     <div class="bottom_half">
-        <img src="https://www.researchgate.net/profile/Cataldo-Guaragnella/publication/235406965/figure/fig1/AS:393405046771720@1470806480985/Original-image-256x256-pixels_Q320.jpg" alt="robot" />
+        {% for image in images %}
+            <div class="image">
+                <img src="{% static image.image.url %}" alt="image" />
+            </div>
+        {% endfor %}
     </div>
 
 

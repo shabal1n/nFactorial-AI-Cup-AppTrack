@@ -53,6 +53,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "bot.urls"
 
+MEDIA_ROOT = '/bot/images'
+
+MEDIA_URL = '/images/'
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",

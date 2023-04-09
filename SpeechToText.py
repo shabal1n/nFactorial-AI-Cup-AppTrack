@@ -1,7 +1,9 @@
 import openai
 import codecs
 
-openai.api_key = "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"
+from config import OPENAI_API_KEY
+
+openai.api_key = OPENAI_API_KEY
 
 def speech_to_text(audio_file):
     audio_file = open("audio.wav", "rb")

@@ -1,13 +1,13 @@
 import openai
 
-from config import OPENAI_API_KEY
+from main.config import OPENAI_API_KEY
 
 openai.api_key = OPENAI_API_KEY
 
 
-async def get_text_summary(text):
+def get_text_summary(text):
     text = "Tell me about main events and emotions in bullet points: " + text
-    completion = await openai.ChatCompletion.create(
+    completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo", messages=[{"role": "user", "content": text}]
     )
 

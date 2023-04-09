@@ -18,10 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from main.views import home, get_date_info
+from main.views import home, get_date_info, add_new_note, add_note_to_db
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", home),
-    path("info", get_date_info, name="info")
+    path("info", get_date_info, name="info"),
+    path("new_note", add_new_note, name="new_note"),
+    path("add_note", add_note_to_db, name="add_note"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

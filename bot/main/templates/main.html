@@ -34,7 +34,10 @@
                 <li onclick=location.href="{% url 'info' %}?month={{ this_month|default:'' }}&day={{ i|default:'' }}">{{ i }}</li>
             {% endfor %}
         </ul>
+
+        <button onclick=location.href="{% url 'new_note' %}">New note</button>
     </div>
+    
 
 </body>
 

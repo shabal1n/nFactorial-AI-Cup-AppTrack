@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+</head>
+
+<body style="text-align: center; justify-content: center;">
+    <form action="{% url 'add_note' %}" method="post">
+        {% csrf_token %}
+        <label for="note">Note: </label>
+        <textarea id="note" type="text" name="note"></textarea>
+        <input type="submit" value="OK">
+    </form>
+</body>
+
+</html>
