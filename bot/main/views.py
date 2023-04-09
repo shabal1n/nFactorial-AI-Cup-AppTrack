@@ -61,6 +61,7 @@ def add_note_to_db(request):
         if Note.objects.filter(date=datetime.now().date()):
             new_note = Note.objects.get(date=datetime.now().date())
             new_note.note = request.POST.get('note')
+            Image.objects.filter(note=new_note).delete()
             new_note.save()
         else:
             new_note = Note.objects.create(note=request.POST.get('note'), date=datetime.now())

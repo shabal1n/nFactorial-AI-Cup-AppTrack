@@ -53,9 +53,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "bot.urls"
 
-MEDIA_ROOT = '/bot/images'
+# MEDIA_ROOT = 'bot/images'
 
-MEDIA_URL = '/images/'
+# MEDIA_URL = '/images/'
 
 TEMPLATES = [
     {

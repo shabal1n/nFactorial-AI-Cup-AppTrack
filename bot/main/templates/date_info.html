@@ -52,7 +52,7 @@
     <div class="bottom_half">
         {% for image in images %}
             <div class="image">
-                <img src="{% static image.image.url %}" alt="image" />
+                <img src="{{ image.image.url }}" alt="image" />
             </div>
         {% endfor %}
     </div>

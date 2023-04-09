@@ -30,7 +30,8 @@ def save_images(images, note):
     for image in images:
         r = requests.get(image)
         image = PIL.Image.open(BytesIO(r.content))
-        path_to_file = str(uuid.uuid4()) + '.png'
+        path_to_file = os.path.join('images', str(uuid.uuid4()) + '.png')
+        print("FILE", path_to_file)
         image.save(path_to_file)
         new_image = Image.objects.create(image=path_to_file, note=note)
         new_image.save()
